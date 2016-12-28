@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 26, 2016 3:42:50 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.User" table="USER">
+        <id name="userId" type="int">
+            <column name="USERID" />
+            <generator class="native" />
+        </id>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" unique="true" not-null="true"/>
+        </property>
+        <property name="password" type="java.lang.String" not-null="true">
+            <column name="PASSWORD" not-null="true"/>
+        </property>
+        <property name="firstName" type="java.lang.String">
+            <column name="FIRSTNAME" />
+        </property>
+        <property name="lastName" type="java.lang.String">
+            <column name="LASTNAME" />
+        </property>
+        <property name="dob" type="date">
+            <column name="DOB" />
+        </property>
+        <property name="ipAddr" type="java.lang.String">
+            <column name="IPADDR" />
+        </property>
+    </class>
+</hibernate-mapping>

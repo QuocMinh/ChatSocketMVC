@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 24, 2016 5:40:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="model.Message" table="MESSAGE">
+		<id name="msgId" type="long">
+			<column name="MSGID" />
+			<generator class="native" />
+		</id>
+		<many-to-one class="model.User" fetch="join" name="senderId">
+			<column name="SENDERID" />
+		</many-to-one>
+		<many-to-one class="model.User" fetch="join" name="receiverId">
+			<column name="RECEIVERID" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="mgs"
+			type="java.lang.String">
+			<column name="MGS" />
+		</property>
+		<property generated="never" lazy="false" name="dateTime"
+			type="java.sql.Date">
+			<column name="DATETIME" />
+		</property>
+		<property generated="never" lazy="false" name="status" type="boolean">
+			<column name="STATUS" />
+		</property>
+	</class>
+</hibernate-mapping>
